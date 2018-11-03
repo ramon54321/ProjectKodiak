@@ -1,4 +1,8 @@
 **/*.swp
-.gradle
 build
-
+target
+.classpath
+.project
+.settings
+.idea
+app.iml
