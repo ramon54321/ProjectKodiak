@@ -21,6 +21,7 @@ class EntityStore {
     }
 
     fun getById(id: Int): Entity {
-        return entitiesById[id] ?: throw IllegalStateException("Entity with given ID does not exist.")
+        return entitiesById[id]
+                ?: throw IllegalStateException("Entity with given ID does not exist.")
     }
 }

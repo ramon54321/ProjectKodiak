@@ -1,7 +1,7 @@
 package ramonbrand.nations
 
-import ramonbrand.nations.components.EchoComponent
 import ramonbrand.nations.components.ComponentType
+import ramonbrand.nations.components.EchoComponent
 import ramonbrand.nations.entities.Entity
 import ramonbrand.nations.entities.EntityStore
 import ramonbrand.nations.messages.MessageString
@@ -30,7 +30,7 @@ class Game {
     fun step() {
         println("""Game Step ${this.step}""")
 
-        if(this.step == 6) {
+        if (this.step == 6) {
             entityStore.getById(45).getComponent(ComponentType.Echo).sendMessage(MessageString("Bravo Seven"))
         }
 

@@ -12,7 +12,8 @@ class Entity(val id: Int) {
     }
 
     fun getComponent(componentType: ComponentType): IComponent {
-        return this.components[componentType] ?: throw IllegalStateException("No component found with given EComponent.")
+        return this.components[componentType]
+                ?: throw IllegalStateException("No component found with given EComponent.")
     }
 }
 

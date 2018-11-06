@@ -8,7 +8,7 @@ class EchoComponent : IComponent {
     override val componentType: ComponentType
         get() = ComponentType.Echo
 
-    override fun sendMessage(message: Message) = when(message) {
+    override fun sendMessage(message: Message) = when (message) {
         is MessagePing -> println("I am an Echo Component, and I received a ping.")
         is MessageString -> println("""I am an Echo Component, and I received ${message.string}""")
     }
