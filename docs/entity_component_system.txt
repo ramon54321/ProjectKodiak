@@ -1,0 +1,16 @@
+
+
+
+
+
+Component
+    Must implement 'apply'
+    Must NOT depend on anything other than other components of the parent entity
+
+
+Entity -> Components -> Foreach -> Apply
+
+
+
+
+

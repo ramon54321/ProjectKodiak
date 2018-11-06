@@ -5,17 +5,18 @@ enum class ApplicationState {
 }
 
 fun main(args: Array<String>) {
+    // Time in milliseconds for each step
+    val stepTime = 1000L
 
 	val applicationState = ApplicationState.RUNNING
 	val game = Game()
 
+    game.init()
+
+    // Step game infinitely while application is running
+    // TODO: Implement better game loop
 	while(applicationState == ApplicationState.RUNNING) {
-		println("Step")
-
 		game.step()
-
-		Thread.sleep(1000)
+		Thread.sleep(stepTime)
 	}
-
-    println("Hello world!")
 }
