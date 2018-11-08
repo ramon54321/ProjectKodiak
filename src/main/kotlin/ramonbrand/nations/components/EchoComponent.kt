@@ -4,7 +4,7 @@ import ramonbrand.nations.messages.Message
 import ramonbrand.nations.messages.MessagePing
 import ramonbrand.nations.messages.MessageString
 
-class EchoComponent : IComponent {
+class EchoComponent(id: Int) : Component(id) {
     override val componentType: ComponentType
         get() = ComponentType.Echo
 

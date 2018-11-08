@@ -1,14 +1,15 @@
 package ramonbrand.nations
 
-import ramonbrand.nations.components.ComponentType
-import ramonbrand.nations.components.EchoComponent
+import ramonbrand.nations.components.*
 import ramonbrand.nations.entities.Entity
+import ramonbrand.nations.entities.EntityFactory
 import ramonbrand.nations.entities.EntityStore
 import ramonbrand.nations.messages.MessageString
 
 class Game {
 
     private val entityStore: EntityStore = EntityStore()
+    private val componentStore: ComponentStore = ComponentStore()
 
     private var step = 0
 
@@ -16,12 +17,16 @@ class Game {
      * Called when Game is constructed.
      */
     fun init() {
-        entityStore.init()
 
-        val e1 = Entity(45)
-        e1.addComponent(EchoComponent())
+        val e1: Entity = EntityFactory.create(::Entity)
+        val c1: Component = ComponentFactory.create(::EchoComponent)
+
+        e1.addComponent(c1)
 
         entityStore.insert(e1)
+        componentStore.insert(c1)
+
+        println(c1.componentType)
     }
 
     /**
