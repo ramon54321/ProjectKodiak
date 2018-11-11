@@ -5,7 +5,7 @@
 
 Component
     Must implement 'apply'
-    Must NOT depend on anything other than other components of the parent entity
+    Must NOT depend on anything other than other components of the parent KEntity
 
 
 Entity -> Components -> Foreach -> Apply

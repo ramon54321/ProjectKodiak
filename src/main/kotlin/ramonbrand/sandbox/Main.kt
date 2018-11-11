@@ -1,10 +1,20 @@
-package ramonbrand.nations
+package ramonbrand.sandbox
 
 enum class ApplicationState {
     RUNNING, STOPPED
 }
 
 fun main(args: Array<String>) {
+
+    val x = "Hello"
+
+    when (x) {
+        "Bob" -> println("Its Bob!")
+        "Hello" -> println("Funny...")
+        else -> println("Nope, not here.")
+    }
+
+
     // Time in milliseconds for each step
     val stepTime = 1000L
 
