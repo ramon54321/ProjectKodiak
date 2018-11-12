@@ -1,6 +1,7 @@
 package ramonbrand.sandbox
 
 import ramonbrand.kodiak.ecs.entities.KEntity
+import ramonbrand.kodiak.logging.KLogLevel
 import ramonbrand.kodiak.logging.KLogger
 import ramonbrand.sandbox.ecs.EntityComponentSystem
 import ramonbrand.sandbox.ecs.components.ComponentType
@@ -14,6 +15,7 @@ class Game {
     private var e1: KEntity? = null
 
     fun init() {
+        KLogger.setLogLevel(KLogLevel.INFO)
         KLogger.info("Game Initialized")
         e1 = entityComponentSystem.createEntity()
         entityComponentSystem.debugSystem.addEntity(e1!!)
