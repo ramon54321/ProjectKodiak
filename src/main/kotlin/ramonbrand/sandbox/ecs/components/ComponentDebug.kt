@@ -4,20 +4,18 @@ import ramonbrand.kodiak.ecs.components.KComponent
 import ramonbrand.kodiak.ecs.components.KComponentType
 import ramonbrand.kodiak.ecs.entities.KEntity
 import ramonbrand.kodiak.ecs.messages.KMessage
-import ramonbrand.sandbox.ecs.messages.MessageMove
+import ramonbrand.kodiak.logging.KLogger
+import ramonbrand.sandbox.ecs.messages.MessageString
 
 class ComponentDebug(id: Int, KEntity: KEntity) : KComponent(id, KEntity) {
     override val kComponentType: KComponentType
-        get() = ComponentType.TRANSFORM
+        get() = ComponentType.DEBUG
 
     var x: Float = 0f
     var y: Float = 0f
 
-    override fun sendMessage(KMessage: KMessage) = when (KMessage) {
-        is MessageMove -> {
-            this.x += KMessage.x
-            this.y += KMessage.y
-        }
+    override fun sendMessage(kMessage: KMessage) = when (kMessage) {
+        is MessageString -> KLogger.debug(kMessage.string)
         else -> {}
     }
 }

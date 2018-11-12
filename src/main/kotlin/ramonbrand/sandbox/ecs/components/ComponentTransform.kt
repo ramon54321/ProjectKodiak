@@ -13,10 +13,10 @@ class ComponentTransform(id: Int, KEntity: KEntity) : KComponent(id, KEntity) {
     var x: Float = 0f
     var y: Float = 0f
 
-    override fun sendMessage(KMessage: KMessage) = when (KMessage) {
+    override fun sendMessage(kMessage: KMessage) = when (kMessage) {
         is MessageMove -> {
-            this.x += KMessage.x
-            this.y += KMessage.y
+            this.x += kMessage.x
+            this.y += kMessage.y
         }
         else -> {}
     }

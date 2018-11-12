@@ -6,5 +6,5 @@ import ramonbrand.kodiak.ecs.messages.KMessage
 
 abstract class KComponent(override val id: Int, val KEntity: KEntity) : KIId {
     abstract val kComponentType: KComponentType
-    abstract fun sendMessage(KMessage: KMessage)
+    abstract fun sendMessage(kMessage: KMessage)
 }
